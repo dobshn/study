@@ -48,6 +48,13 @@ void test_bin_to_int(void) {
 }
 
 int main(int argc, char* argv[]) {
-    
+    // 인자로 받은 문자열들을 정수로 변환한 뒤,
+    // 그에 해당하는 ASCII 값을 테이블에서 조회하여 출력
+    int idx;
+    for (int i = 1; i < argc; ++i) {
+        idx = bin_to_int(argv[i]);
+        putchar(ASCII_table[idx]);
+    }
+    putchar('\n');
     return 0;
 }
